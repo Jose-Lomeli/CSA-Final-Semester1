@@ -1,11 +1,10 @@
 import java.util.*;
 public class gameDriver
 {
-
     public static void main(String[]args)
     {
+        //-----------------------------these are all of hte plot and stars
         Ending someEnding = new Ending(4,4 );
-
         Ending stars11 = new Ending(4, 4);
         Ending starsNeeded = new Ending(4, 4);
         Ending stars9 = new Ending(5, 4);
@@ -25,37 +24,35 @@ public class gameDriver
         game plot9 = new game("you stay in the closet and after a few minutes the man leaves your room. You then hear  rustling in the cornfield you take advantage of this moment grab your keys, grab КЦVЭK, run out of the house, get in your car and drive away never to go back to that house...(YOU SURVIVED) but you see your dog dead on the curb.");
         game plot10 = new game("You run back to the house and as you arrive you hear a gunshot. You were shot in the back. yo u fall to the floor and the last thing you see is КЦVЭK running over to you whimpering.");
         game plot11 = new game("You shoot and hit him. the person falls to hte floor. you look at him for a few seconds, run back to the house, get КЦVЭK and drive away");
+        //-----------------------------these are all of hte plot and stars
 
 
-
+        //prints out the instructions and creates a scanner for user input
         System.out.println(instructions.getPlot());
         System.out.print(plot1.getPlot());
         System.out.println(" ");
 
-
         Scanner returned = new Scanner(System.in);
-
         System.out.println("choose (1 OR 2): ");
         int got  = returned.nextInt();
+        //end
 
 
-
-
-        //gameChoices------------------------------------------------------------------------------
-
+        //-----------(logic)if, else, and if else statements that take care of the user inputs and the choices that they make ()
         if(got == 1)
         {
             System.out.println(plot2);
+            //you died
 
             int x = 0;
             while (x <= 3)
             {
                 System.out.println("*STAB*");
                 x++;
-            }
+            }// end while
             System.out.println("You were stabbed " + x + " times in the back by Jason Voorhees");
-        }//dead
-
+        }//end of if got ==1
+        //you died
         else if(got == 2)
         {
             System.out.println(plot3);
@@ -69,7 +66,6 @@ public class gameDriver
                 if(got == 1)
                 {
                     System.out.println(plot7);
-
                     for(int i = 0; i < 2; i++)
                     {
                         int one = 1;
@@ -82,16 +78,17 @@ public class gameDriver
                         if(num == 1 && one == 1)
                         {
                             boolone = true;
-                        }
+                        }// end if
                         if(num == 1 && one == 1)
                         {
                             booltwo = true;
-                        }
-                    }
+                        }//end if
+                    }//end for loop
+
                     System.out.println("(YOU DIED)");
 
-                    //you die
-                }
+                    //you died
+                }//end of if got ==1
                 else if( got == 2)
                 {
                     System.out.println(plot6);
@@ -100,31 +97,35 @@ public class gameDriver
                     if(got == 1)
                     {
                         System.out.println(plot8);
-                        //dead
-                    }
+                        //you died
+                    }//end of if
                     else if (got == 2)
                     {
+                        //////------------------------compares teh amount of moves you made to the least amount of moves needed to win
                         System.out.println(plot9);
+
                         Scanner results2 = new Scanner (System.in);
                         System.out.println("Do you want to see your results");
                         String user2 = null;
                         user2 = results2.nextLine();
 
-
-                        if(user2.equals("yes") || user2.equals("Yes")) {
-                            if (stars9.compareTo(starsNeeded) == 1) {
+                        if(user2.equals("yes") || user2.equals("Yes"))
+                        {
+                            if (stars9.compareTo(starsNeeded) == 1)
+                            {
                                 System.out.println("Try to beat the game in less moves");
-
-                            } else {
+                            } //end of if. compareTo
+                            else
+                                {
                                 System.out.println("Cograts you beat the game in the least amount of moves");
+                            }//end of else
+                        }//end of compare to
+                        //you survived
+                        ///---------------(end)---compares teh amount of moves you made to the least amount of moves needed to win
+                    }//enf of else if got == 2
+                } // end of else if got ==2
 
-                            }
-                        }
-                        //survived
-                    }
-                }
-
-            }
+            }// end of if got == 1
             else if(got == 2 )
             {
                 System.out.println(plot5);
@@ -132,10 +133,8 @@ public class gameDriver
 
                 if(got == 1)
                 {
+                    //-------------------------------------------compares teh amount of moves you made to the least amount of moves needed to win
                     System.out.println(plot11);
-
-
-//                    ////////////////////////////////////////////
                     Scanner results = new Scanner (System.in);
                     String user = null;
                     user = results.nextLine();
@@ -145,31 +144,32 @@ public class gameDriver
                         if(stars11.compareTo(starsNeeded) == -1)
                         {
                             System.out.println("Cograts you beat the game in the least amount of moves");
-                        }
+                        }// end of if.compareto
                         else
                         {
                             System.out.println("Try to beat the game in less moves");
-                        }
-                    }
+                        }// end of else
+                    }//enf of if user.equals
+                    //-----------------(end)------------------compares teh amount of moves you made to the least amount of moves needed to win
                 else
                     {
                         System.out.println("Be a good sport Play again");
-                    }
-
-
-//                    ////////////////////////////////////////////
-                }
+                    }//enf og else
+                    //you survived
+                }//end of if got == 1
                 else if( got == 2)
                 {
                     System.out.println(plot10);
-                }
-            }
-        }
-
+                    //you died
+                }//end of else if
+            }//end of else if got == 2
+        }//end of else if got == 2
+        //-----------(logic end)
         else
         {
             System.out.println("You didnt enter 1 or 2, so you died. CONRGRATS");
-        }
+        }//end of else
+
 
         //gameChoices------------------------------------------------------------------------------
     }
