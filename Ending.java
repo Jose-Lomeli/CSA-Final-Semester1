@@ -1,7 +1,6 @@
 import java.util.*;
-public class Ending implements Comparable<Ending> {
-    //either set the stars to 4 or 5 her or set them in the end
-
+public class Ending implements Comparable<Ending>
+{
     private int stars = 0;
     private int starsNeeded = 4;
 
@@ -9,29 +8,26 @@ public class Ending implements Comparable<Ending> {
         this.stars = stars;
         this.starsNeeded = starsNeeded;
 
-    }
+    }//end public ending
 
-    public Ending(int newStars, int newStarsNeeded) {
+    public Ending(int newStars, int newStarsNeeded)
+    {
         stars = newStars;
         starsNeeded = newStarsNeeded;
-    }
+    }// end public ending
 
-    public int getStars() {
+    public int getStars()
+    {
         return stars;
-        //return starsNeeded;
-    }
+    }// end get stars
 
-    public String toString() {
+    public String toString()
+    {
         String output = "";
         output += "you made: " + stars + "moves";
         output += "you needed" + starsNeeded + "moves to beat the game the quickest";
         return output;
     }// end toString
-
-//    public void setStars(int newSetStars) {
-//        stars = newSetStars;
-//    }
-//}
 
     @Override
     public int compareTo(Ending stars)
@@ -39,21 +35,10 @@ public class Ending implements Comparable<Ending> {
         if(this.stars == starsNeeded)
         {
             return -1;
-        }
+        }//end if
         else
         {
             return  1;
-        }
-    }
-///public class NewKeywordExample
-//{
-//    String name = "GeeksForGeeks";
-//    public static void main(String[] args)
-//    {
-//        // Here we are creating Object of
-//        // NewKeywordExample using new keyword
-//        NewKeywordExample obj = new NewKeywordExample();
-//        System.out.println(obj.name);
-//    }
-//}
-}
+        }//end else
+    }// end compare to
+}//end public class endding
